@@ -1,0 +1,33 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: blue;
+  background-color: #fee;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px; }
+
+button {
+  background-color: #fff;
+  border: none;
+  color: blue;
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px; }
+
+section {
+  text-align: center;
+  padding-top: 5px; }
+  section h1 {
+    color: black; }
+  section h2 {
+    color: blue; }
+  section h3 {
+    color: green; }
+
+.section2 {
+  padding-left: 30px;
+  padding-right: 30px; }
+
+legend {
+  background-color: #ae3; }
