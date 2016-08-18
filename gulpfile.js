@@ -3,7 +3,7 @@
 * @Date:   2016-08-18T14:41:20+03:00
 * @Email:  pkiragu@cytonn.com
 * @Last modified by:   PKiragu
-* @Last modified time: 2016-08-18T18:12:12+03:00
+* @Last modified time: 2016-08-19T01:43:42+03:00
 */
 
 
@@ -11,6 +11,7 @@
 var gulp = require('gulp');
 var sass = require ('gulp-sass');
 var browserSync = require('browser-sync').create();
+var useref = require('gulp-useref');
 
 gulp.task('default', function() {
   console.log('Hello Phillo');
@@ -36,4 +37,10 @@ gulp.task('browserSync', function() {
       baseDir: 'Gulp_Project'
     },
   });
+});
+
+gulp.task('useref', function(){
+  return gulp.src('*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('js'));
 });
