@@ -3,7 +3,7 @@
 * @Date:   2016-08-18T14:41:20+03:00
 * @Email:  pkiragu@cytonn.com
 * @Last modified by:   PKiragu
-* @Last modified time: 2016-08-18T17:51:47+03:00
+* @Last modified time: 2016-08-18T18:12:12+03:00
 */
 
 
@@ -20,9 +20,20 @@ gulp.task('default', function() {
 gulp.task('sass', function(){
   return gulp.src('css/styles.scss')
     .pipe(sass()) // Using gulp-sass
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({ // add this line to enable live loading
+      stream: true
+    }));
 });
 
-gulp.task('watch', function(){
+gulp.task('watch',['browserSync', 'sass'], function(){
   gulp.watch('css/styles.scss', ['sass']);
+});
+
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: 'Gulp_Project'
+    },
+  });
 });
